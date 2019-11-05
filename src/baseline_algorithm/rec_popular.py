@@ -3,7 +3,7 @@ from pathlib import Path
 import click
 import pandas as pd
 
-import functions as f
+from . import functions as f
 
 current_directory = Path(__file__).absolute().parent
 default_data_directory = current_directory.joinpath('..', '..', 'data')
@@ -20,9 +20,9 @@ def main(data_path):
     subm_csv = data_directory.joinpath('submission_popular.csv')
 
     print(f"Reading {train_csv} ...")
-    df_train = pd.read_csv(train_csv, header=0)
+    df_train = pd.read_csv(train_csv)
     print(f"Reading {test_csv} ...")
-    df_test = pd.read_csv(test_csv, header=0)
+    df_test = pd.read_csv(test_csv)
 
     print("Get popular items...")
     df_popular = f.get_popularity(df_train)
