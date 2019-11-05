@@ -2,7 +2,7 @@ export DATA="./mydata"
 export TRAIN="train.csv"
 export TEST="test.csv"
 export GT="gt.csv"
-export SUBMISSION="gt.csv"
+export SUBMISSION="submission_popular.csv"
 
 spark-submit preprocess-trainset.py \
 --executor-memory 8g \
