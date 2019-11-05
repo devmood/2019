@@ -3,7 +3,7 @@ from pathlib import Path
 import click
 import pandas as pd
 
-from . import functions as f
+import functions as f
 
 current_directory = Path(__file__).absolute().parent
 default_data_directory = current_directory.joinpath('..', '..', 'data')
