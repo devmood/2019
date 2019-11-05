@@ -8,7 +8,10 @@ resource.setrlimit(resource.RLIMIT_AS, (10*(1024**3), 10*(1024**3)))
 spark  = SparkSession.builder.master("local").getOrCreate()
 sc = spark.sparkContext
 
-columns = ['user_id', 'session_id', 'timestamp', 'step', 'action_type', 'reference', 'platform', 'city', 'device', 'current_filters', 'impressions', 'prices']
+columns = ['user_id', 'session_id', 'timestamp', 
+           'step', 'action_type', 'reference', 
+           'platform', 'city', 'device', 
+           'current_filters', 'impressions', 'prices']
 
 traindata = (spark.
              read.
